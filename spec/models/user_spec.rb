@@ -14,9 +14,15 @@ describe User do
   it { should respond_to(:password_digest) }
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
+  it { should respond_to(:remember_token) }
   it { should respond_to(:authenticate) }
-
   it { should be_valid }
+
+
+  describe "remember token" do
+    before { @user.save }
+    it { expect(@user.remember_token).not_to be_blank }
+  end
 
   describe "when name is not present" do
     before { @user.name = " " }
@@ -113,33 +119,6 @@ describe User do
       end
     end
 
-    # describe "signup page" do
-    #
-    #   before { visit signup_path }
-    #
-    #   let(:submit) { "Create" }
-    #
-    #   describe "with invalid information" do
-    #     it "should not create a user" do
-    #       expect { click_button submit }.not_to change(User, :count)
-    #     end
-    #   end
-    #
-    #   describe "with valid information" do
-    #     before do
-    #
-    #       fill_in "user_name",         with: "Example User"
-    #       fill_in "user_email",        with: "user@example.com"
-    #       fill_in "user_password",     with: "foobar"
-    #       fill_in "user_password_confirmation", with: "foobar"
-    #
-    #     end
-    #
-    #     it "should create a user" do
-    #       expect { click_button submit }.to change(User, :count).by(1)
-    #     end
-    #   end
-    # end
-
   end
+
 end

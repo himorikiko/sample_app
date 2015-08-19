@@ -28,6 +28,8 @@ group :test do
   gem 'rb-notifu'
   gem 'wdm'
   gem 'factory_girl_rails'
+  gem 'cucumber-rails'
+  gem 'database_cleaner'
 end
 
 # Use SCSS for stylesheets
