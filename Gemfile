@@ -5,6 +5,9 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.8'
 gem 'bootstrap-sass'
 gem 'bcrypt'
+gem 'faker'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 # Use sqlite3 as the database for Active Record
 
 group :development, :test do
@@ -28,7 +31,7 @@ group :test do
   gem 'rb-notifu'
   gem 'wdm'
   gem 'factory_girl_rails'
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
 end
 

@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   # get 'users/new'
 
+
+  # default_url_options :host => "localhost:3000"
+
   resources :users
 
   resources :sessions, only: [:new, :create, :destroy]
